@@ -1,3 +1,10 @@
+:root {
+  --bg-color: #36413E;
+  --font-color: #D7D6D6;
+  --lighter-bg-color: #8d8d923b;
+  --grey-color: #5D5E60;
+}
+
 html,
 body {
   padding: 0;
@@ -13,4 +20,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.hero{
+  text-align: center;
+  padding-top: 1.2rem;
 }
