@@ -1,0 +1,31 @@
+.table {
+    border: 1px solid grey;
+    border-radius: .1em;
+    min-width: 100%;
+
+    thead tr th {
+        color: #000;
+        background: var(--grey-color);
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+
+    tbody {
+        tr {
+            &:nth-child(even) {
+                background: var(--transparent-bg);
+            }
+
+            td {
+                border: 1px solid grey;
+                padding: 1rem .5rem;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background: var(--lighter-bg-color);
+                color: #fff;
+            }
+        }
+    }
+}

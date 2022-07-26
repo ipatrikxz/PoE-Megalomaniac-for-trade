@@ -1,0 +1,36 @@
+.title a {
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  
+.title a:hover,
+.title a:focus,
+.title a:active {
+  
+}
+
+.title {
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}

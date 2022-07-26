@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import style from '../styles/search.module.css'
+import styles from '../styles/search.module.scss'
 
-const Search = (props) => {
+const Search = ({setQuery, mods}) => {
+
+    const list = () => {
+        return mods.map((mod, i) => { 
+            return ( <li key={i} className={styles.card}>{mod.name}</li> ) })           
+    }
 
     return (
-        <div className={style.search}>
-            <div className={style.list}>
-                <ul>
-                    <li>elem 1</li>
-                </ul>
-            </div>
+        <div className={styles.search}>
+            <ul className={styles.cards}>
+                { 
+                    mods.length > 0 ? list() : <li className={styles.card}>Click on a mod.</li>
+                }
+            </ul>
 
-            <div className={style.searchBox}>
+            <div className={styles.searchBox}>
                 <input type="text" id="searchBox" placeholder="Search.."
-                        onChange={(event) => setValue(event.target.value)}
-                        value={value} />
+                        onChange={e => setQuery(e.target.value.toLocaleLowerCase())} />
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Search;
+export default Search

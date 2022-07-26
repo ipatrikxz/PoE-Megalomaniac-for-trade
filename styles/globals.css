@@ -1,8 +1,10 @@
 :root {
   --bg-color: #36413E;
   --font-color: #D7D6D6;
+  --lighter-font-color: #bdbcbccc;
   --lighter-bg-color: #8d8d923b;
-  --grey-color: #5D5E60;
+  --grey-color: #7f7f7f;
+  --transparent-bg: #00000080; 
 }
 
 html,
