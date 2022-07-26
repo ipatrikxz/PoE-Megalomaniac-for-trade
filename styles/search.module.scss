@@ -4,7 +4,7 @@
   width: 100%;
 
   .cards{
-    max-height: 200px;
+    max-height: 240px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -13,13 +13,13 @@
     padding: 0;
   
     .card {
-      margin-bottom: .5rem;
+      margin-bottom: .3rem;
       margin-right: .25rem;
       padding: .2rem;
       text-align: left;
-      color: inherit;
+      color: var(--lighter-font-color);
       text-decoration: none;
-      border: 1px solid #eaeaea;
+      border: 1px solid #eaeaea4b;
       border-radius: 2px;
       transition: color 0.15s ease, border-color 0.15s ease;
       max-width: 300px;
@@ -28,7 +28,7 @@
       &:focus,
       &:active {
         cursor: pointer;
-        color: var(--lighter-font-color);
+        color: var(--font-color);
         border-color: var(--lighter-font-color);
       }
     }
@@ -43,6 +43,11 @@
       padding: .5rem;
       width: 210px;
       border-radius: .2rem;
+    }
+
+    .selectedModsCounter{
+      text-align: right;
+      font-size: 1.15rem;
     }
   }
   

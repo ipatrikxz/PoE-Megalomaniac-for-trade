@@ -10,7 +10,7 @@ import { data } from "../components/megalo"
 export default function Home() {
 
   const [query, setQuery] = useState('')
-  const [mod, setMod] = useState([])
+  const [mods, setMod] = useState([])
   
   const search = (data) => {
       return data.filter((jewel) => 
@@ -24,6 +24,14 @@ export default function Home() {
     })
   }
 
+  const removeItem = (mod) => {
+    setMod(current =>
+      current.filter(currMod => {
+        return currMod.name != mod.name
+      }),
+    );
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -33,7 +41,7 @@ export default function Home() {
 
       <Hero />
       <main className={styles.main}>
-        <Search setQuery={setQuery} mods={mod} />
+        <Search setQuery={setQuery} mods={mods} removeItem={removeItem} />
         <Table data={search(data)} addItem={addItem} />
       </main>
 
