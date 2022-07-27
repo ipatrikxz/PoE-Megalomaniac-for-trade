@@ -1,4 +1,3 @@
-import React, { setValue, setState, useState } from 'react'
 import style from '../styles/table.module.scss'
 
 const Table = ({data, addItem}) => {

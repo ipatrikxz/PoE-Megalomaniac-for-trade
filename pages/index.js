@@ -13,9 +13,7 @@ export default function Home() {
   const [mods, setMod] = useState([])
   
   const search = (data) => {
-      return data.filter((jewel) => 
-              jewel.name.toLowerCase().includes(query) || 
-              jewel.description.toLowerCase().includes(query))
+      return data.filter((jewel) => jewel.name.toLowerCase().includes(query) || jewel.description.toLowerCase().includes(query))
   }
 
   const addItem = (mod) => {
