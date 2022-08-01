@@ -1,4 +1,4 @@
-import React, { useEffect , setValue, setState, useState } from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/Home.module.scss'
 import Head from 'next/head'
 import Hero from '../components/Hero'

@@ -1,31 +1,29 @@
+// TODO: &focus, &hover, &active should be in a seperated function 
+
 .search {
   display: flex;
   justify-content: space-between;
   width: 100%;
 
   .cards{
-    max-height: 240px;
-    min-height: 240px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-self: flex-end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    justify-items: stretch;
     list-style-type: none;
-    margin: 0;
     padding: 0;
+    margin-bottom: .25rem;
     
     .card {
       margin-top: .25rem;
       margin-right: .25rem;
       padding: .33rem .3rem;
       text-align: left;
-      font-size: 1.075rem;
       color: var(--lighter-font-color);
       text-decoration: none;
       border: 1px solid #eaeaea4b;
       border-radius: 2px;
-      transition: color .15s ease, border-color 0.333s ease, transform .333s ease, background .3s ease;
-      max-width: 300px;
+      transition: color .15s ease, border-color 0.033s ease, transform .033s ease, background .3s ease;
   
       &:hover,
       &:focus,
@@ -40,9 +38,79 @@
   }
 
   .searchBox {
+    width: 240px;
     margin-bottom: .3rem;
     padding: 0;
     align-self: flex-end;
+
+    .header{
+      text-align: center;
+      margin: .75rem 0;
+    }
+
+    .searchType{
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+
+      .countGroup{
+        display: flex;
+        align-items: stretch;
+        flex-flow: nowrap;
+
+        .count{
+          margin-bottom: .25rem;
+          flex-grow: 2;
+          width: 100%;
+        }
+
+        .countInput{
+          flex-grow: 1;
+          width: 100%;
+          padding: .5rem;
+          margin-left: .25rem;
+          background: #0d402f3d;
+          color: var(--font-color);
+          border: 1px solid #eaeaea4b;
+          border-radius: .2rem;
+
+          &[type='number'] {
+            -moz-appearance:textfield;
+          }
+        
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+          }
+
+          &::placeholder{
+            color: var(--transparent-font-color);
+          }
+        }
+      }
+
+      .count, .and{
+        padding: .3rem .2rem;
+        border: 1px solid #eaeaea4b;
+        border-radius: 2px;
+        transition: color 0.15s ease, border-color 0.15s ease;
+        
+        &:hover,
+        &:focus,
+        &:active {
+          cursor: pointer;
+          color: var(--font-color);
+          background: #0d402f3d;
+          border-color: #49a794;
+        }
+      }
+
+      .active{
+        color: var(--font-color);
+        background: #0d402f3d;
+        border-color: #49a794;
+      }
+    }
 
     .SearchOnTrade{
       margin-bottom: .25rem;
@@ -72,16 +140,24 @@
       }
     }
 
-    input {
+    .searchInput {
+      background: #0d402f3d;
+      color: var(--font-color);
       padding: .5rem;
-      width: 210px;
+      width: 100%;
       border-radius: .2rem;
-    }
+      border: 1px solid #eaeaea4b;
 
-    .selectedModsCounter{
-      text-align: right;
-      font-size: 1.2rem;
+      &::placeholder{
+        color: var(--transparent-font-color);
+      }
     }
   }
-  
 }  
+
+@media (max-width: 600px) {
+  .cards{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+}

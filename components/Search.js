@@ -1,9 +1,15 @@
 import styles from '../styles/search.module.scss'
-import React, { setValue, setState, useState } from 'react'
+import React, { useState } from 'react'
 
 const Search = ({setQuery, removeItem, mods}) => {
 
     const [searchType, setSearchType] = useState('count')
+    const [count, setCount] = useState(1)
+
+    const handleSelection = (event) => {
+        let type = event.target.getAttribute('data-searchType')
+        setSearchType(type)
+    }
 
     const makeList = () => {
         return mods.map((mod, i) => { 
@@ -11,7 +17,7 @@ const Search = ({setQuery, removeItem, mods}) => {
     }
 
     const generateListOfIDs = (mods) => {
-        return mods.map((mod) => { return { 'id': mod.id }})  
+        return mods.map((mod) => { return { 'id': mod.id }})
     }
 
     let source = {
@@ -22,7 +28,7 @@ const Search = ({setQuery, removeItem, mods}) => {
                         "category": { 
                             "option": "jewel" 
                         } 
-                    } 
+                    }
                 }
             },
             "status": { 
@@ -30,14 +36,14 @@ const Search = ({setQuery, removeItem, mods}) => {
             },
             "name": "Megalomaniac",
             "stats": [{
-                "type": "count",
-                "value": {"min": 1},
+                "type": searchType,
+                "value": {"min": count},
                 "filters": generateListOfIDs(mods)
             }]
         }
     }
 
-    let link = `https://www.pathofexile.com/trade/search/Sentinel?q=${JSON.stringify(source)}`
+    let link = mods.length > 0 ? `https://www.pathofexile.com/trade/search/Sentinel?q=${JSON.stringify(source)}` : '#'
 
     return (
         <div className={styles.search}>
@@ -46,12 +52,22 @@ const Search = ({setQuery, removeItem, mods}) => {
             </ul>
 
             <div className={styles.searchBox}>
-                <div className={styles.selectedModsCounter} onClick={() => removeItem()}>Selected mods: {mods.length}</div>
-                
-                <div className={styles.SearchOnTrade}>
-                    <a href={link} target="_blank">Search on trade {'------>'}</a>
+                <p className={styles.header}>Search Options:</p>
+                <div className={styles.searchType}>
+                    <div className={styles.countGroup}>
+                        <div data-searchtype="count" className={`${styles.count} ${searchType == 'count' && styles.active}`} onClick={(e) => handleSelection(e)}>Count</div>
+                        { searchType === 'count' && 
+                            <div><input className={styles.countInput} type="number" placeholder="How many?" onChange={e => setCount(e.target.value)} /></div>
+                        }
+                    </div>
+
+                    <div data-searchtype="and" className={`${styles.and} ${searchType == 'and' && styles.active}`} onClick={(e)=> handleSelection(e)}>AND</div>
                 </div>
-                <input type="text" id="searchBox" placeholder="Search.." onChange={e => setQuery(e.target.value.toLocaleLowerCase())} />
+
+                <div className={styles.SearchOnTrade}>
+                    <a href={link} target="_blank">Search on trade {'------>'}</a> 
+                </div>
+                <input className={styles.searchInput} type="text" placeholder="Search.." onChange={e => setQuery(e.target.value.toLocaleLowerCase())} />
             </div>
         </div>
     )
