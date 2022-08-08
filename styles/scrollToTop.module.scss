@@ -1,3 +1,4 @@
+
 .topBtn{
   position: relative;
 
@@ -7,22 +8,22 @@
     right: 0;
     z-index: 20;
     background-color: var(--bg-color);
-    border: 2px solid #fff;
+    border: 2px solid var(--font-color);
     border-right: 0;
     border-bottom: 0;
     border-radius: 1em 0 0 0;
     height: 50px;
     width: 50px;
-    color: #fff;
+    color: var(--font-color);
     cursor: pointer;
-    animation: movebtn 3s ease-in-out infinite;
+    animation: movebtn 2s ease-in-out infinite;
     transition: all .5s ease-in-out;
-  
-    &::hover{
+
+    &:hover{
       animation: none;
-      background: #fff;
-      color: #551B54;
-      border: 2px solid #551B54;
+      background: var(--font-color);
+      color: var(--lighter-green-color);
+      border-color: var(--lighter-green-color);
     }
   }
 }

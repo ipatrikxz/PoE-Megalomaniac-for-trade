@@ -1,0 +1,20 @@
+
+
+.title {
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+
+  a:hover{
+    color: var(--lighter-font-color);
+  }
+
+}
+
+@media (max-width: 700px) {
+  .title{
+    font-size: 2rem;
+  }
+}
