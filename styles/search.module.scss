@@ -56,19 +56,17 @@
       .countGroup{
         display: flex;
         align-items: stretch;
+        gap: .25rem;
         flex-flow: nowrap;
+        margin-bottom: .25rem;
 
         .count{
-          margin-bottom: .25rem;
-          flex-grow: 2;
           width: 100%;
         }
 
-        .countInput{
-          flex-grow: 1;
+        .countInput{  
           width: 100%;
           padding: .5rem;
-          margin-left: .25rem;
           background: #0d402f3d;
           color: var(--font-color);
           border: 1px solid #eaeaea4b;
@@ -155,9 +153,24 @@
   }
 }  
 
-@media (max-width: 600px) {
-  .cards{
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-}
+@media (max-width: 500px) {
+  .search{
+    margin: 0;
+    padding: 0;
+    
+    .cards{
+        margin-bottom: .25rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, .20fr);
+
+        .card{
+          padding: .1rem .15rem;
+        }
+    }
+
+    .searchBox{
+      width: 180px;
+    }
+  } 
+  
 }

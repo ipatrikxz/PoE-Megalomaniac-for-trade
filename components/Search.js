@@ -65,7 +65,7 @@ const Search = ({setQuery, removeItem, mods}) => {
                 </div>
 
                 <div className={styles.SearchOnTrade}>
-                    <a href={link} target="_blank">Search on trade {'------>'}</a> 
+                    <a href={link} target="_blank">Search on trade {'-->'}</a> 
                 </div>
                 <input className={styles.searchInput} type="text" placeholder="Search.." onChange={e => setQuery(e.target.value.toLocaleLowerCase())} />
             </div>

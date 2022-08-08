@@ -6,7 +6,7 @@
 .title a:hover,
 .title a:focus,
 .title a:active {
-  
+  color: var(--lighter-font-color);
 }
 
 .title {
@@ -27,10 +27,8 @@
   font-size: 1.1rem;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+@media (max-width: 500px) {
+  .title{
+    font-size: 2rem;
+  }
 }
