@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Hero from '../components/Hero'
 import Table from '../components/Table'
 import Search from '../components/Search'
+import ScrollToTop from '../components/ScrollToTop'
 import { data } from "../components/megalo"
 
 
@@ -42,6 +43,8 @@ export default function Home() {
         <Search setQuery={setQuery} mods={mods} removeItem={removeItem} />
         <Table data={search(data)} addItem={addItem} />
       </main>
+
+      <ScrollToTop />
 
       <footer className={styles.footer}>Footer</footer>
     </div>
