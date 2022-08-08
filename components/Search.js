@@ -11,6 +11,10 @@ const Search = ({setQuery, removeItem, mods}) => {
         setSearchType(type)
     }
 
+    const isCountSelected = () => {
+        return searchType == 'count'
+    }
+
     const makeList = () => {
         return mods.map((mod, i) => { 
             return ( <li key={i} className={styles.card} onClick={() => removeItem(mod)}>{mod.name}</li> ) })           
@@ -53,15 +57,30 @@ const Search = ({setQuery, removeItem, mods}) => {
 
             <div className={styles.searchBox}>
                 <p className={styles.header}>Search Options:</p>
+                
                 <div className={styles.searchType}>
                     <div className={styles.countGroup}>
-                        <div data-searchtype="count" className={`${styles.count} ${searchType == 'count' && styles.active}`} onClick={(e) => handleSelection(e)}>Count</div>
-                        { searchType === 'count' && 
-                            <div><input className={styles.countInput} type="number" placeholder="How many?" onChange={e => setCount(e.target.value)} /></div>
+                        <div data-searchtype="count" 
+                            className={`${styles.count} ${isCountSelected() && styles.active}`} 
+                            onClick={(e) => handleSelection(e)}>
+                                Count
+                        </div>
+
+                        { isCountSelected() && 
+                            <div>
+                                <input className={styles.countInput} 
+                                        type="number" 
+                                        placeholder="count: 1" 
+                                        onChange={e => setCount(e.target.value)} />
+                            </div>
                         }
                     </div>
 
-                    <div data-searchtype="and" className={`${styles.and} ${searchType == 'and' && styles.active}`} onClick={(e)=> handleSelection(e)}>AND</div>
+                    <div data-searchtype="and" 
+                        className={`${styles.and} ${ !isCountSelected() && styles.active}` } 
+                        onClick={(e)=> handleSelection(e)}>
+                            AND
+                    </div>
                 </div>
 
                 <div className={styles.SearchOnTrade}>

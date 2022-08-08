@@ -6,7 +6,7 @@ return (
     <table className={style.table}>
         <thead>
             <tr>
-                <th>Pass/Suff</th>
+                <th>Type</th>
                 <th>Name</th>
                 <th>Full Descriptions</th>
             </tr>
