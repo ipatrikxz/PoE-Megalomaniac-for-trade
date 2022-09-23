@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Megalomaniac Lurker</title>
+        <title>Megalomaniac Jewel Finder</title>
         <meta name="description" content="Made for Path of Exile enjoyers, Who loves to lurk for Megalomaniac Jewels." />
       </Head>
 
