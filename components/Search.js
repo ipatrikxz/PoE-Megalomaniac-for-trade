@@ -41,7 +41,7 @@ const Search = ({setQuery, removeItem, mods}) => {
             "name": "Megalomaniac",
             "stats": [{
                 "type": searchType,
-                "value": {"min": count},
+                "value": { "min": count },
                 "filters": generateListOfIDs(mods)
             }]
         }
@@ -66,6 +66,7 @@ const Search = ({setQuery, removeItem, mods}) => {
                                 Count
                         </div>
 
+                        {/* if count selected show the input box */}
                         { isCountSelected() && 
                             <div>
                                 <input className={styles.countInput} 
@@ -86,6 +87,7 @@ const Search = ({setQuery, removeItem, mods}) => {
                 <div className={styles.SearchOnTrade}>
                     <a href={link} target="_blank">Search on trade {'-->'}</a> 
                 </div>
+                
                 <input className={styles.searchInput} type="text" placeholder="Search.." onChange={e => setQuery(e.target.value.toLocaleLowerCase())} />
             </div>
         </div>

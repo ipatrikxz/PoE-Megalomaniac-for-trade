@@ -1,17 +1,17 @@
-import react, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { FaAngleUp } from 'react-icons/fa';
 import styles from '../styles/ScrollToTop.module.scss'
 
 const ScrollToTop = () => {
 
-  const [showTopBtn, setShowTopBtn] = useState(false);
+  const [showTopBtn, setShowTopBtn] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 400) {
-            setShowTopBtn(true);
+            setShowTopBtn(true)
         } else {
-            setShowTopBtn(false);
+            setShowTopBtn(false)
         }
     });
   }, []);
