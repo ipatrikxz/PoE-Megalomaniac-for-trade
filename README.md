@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  # [![](./public/UniqueJewelBase2.png)]
+  <img src="./public/UniqueJewelBase2.png">
   <h2 align="center">Megalomaniac Noteable Finder</h2>
 
   <!-- CALL TO ACTION -->
