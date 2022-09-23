@@ -26,7 +26,7 @@ function JsonBinioApi({setError, setIsLoaded, setItems}) {
           setError(error);
         }
       )
-  }, [setError, setIsLoaded, setItems, requestOptions]);
+  }, [setError, setIsLoaded, setItems]);
 }
 
 export default JsonBinioApi
