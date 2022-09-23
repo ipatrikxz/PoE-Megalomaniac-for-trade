@@ -1,10 +1,10 @@
-import React from 'react';
 import style from '../styles/hero.module.scss'
+import Link from 'next/link'
 
 const Hero = () => {
     return (
         <div className={style.title}>
-            <a href="/">Megalomaniac for trade</a>
+            <Link href='/'>Megalomaniac for trade</Link>
         </div>
     );
 };
