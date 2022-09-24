@@ -33,14 +33,13 @@ export default function Home() {
       </Head>
 
       <Hero />
+      
       <main className={styles.main}>
         <Search setQuery={setQuery} mods={mods} removeItem={removeItem} />
         <Table query={query} addItem={addItem} />
       </main>
 
       <ScrollToTop />
-
-      <footer className={styles.footer}>Footer</footer>
     </div>
   )
 }
