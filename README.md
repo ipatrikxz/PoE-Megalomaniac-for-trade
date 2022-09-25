@@ -40,6 +40,7 @@ The purpose of this project is to summarize all the Noteable jewel mod names and
 
 ## Screenshots
   <div>
+    <img src="./public/screenExample0.png">
     <img src="./public/screenExample1.png">
     <img src="./public/screenExample3.png">
     <img src="./public/screenExample2.png">
