@@ -21,7 +21,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-  ----------------------------------------------------------------
 
 The purpose of this project is to summarize all the Noteable jewel mod names and descriptions in one page that you can search through.
 
@@ -33,14 +32,20 @@ The purpose of this project is to summarize all the Noteable jewel mod names and
   - Click the "Search on trade" - This will generate a search query based on your selected mods and open it in the offical trade site in a seperated window. 
 
 ## Features
-  ----------------------------------------------------------------
+
   - Quick searchable list of mod names and thier descriptions.
   - Selectable mods, make your own list of mods
   - Search types like on the offical trade site (AND, COUNT)
   - Generate search query for the offical PoE trade site based on your list and search type
 
+## Screenshots
+  <div>
+    <img src="./public/screenExample1.png">
+    <img src="./public/screenExample3.png">
+    <img src="./public/screenExample2.png">
+  </div>
+
 ## Built With
-  ----------------------------------------------------------------
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
