@@ -2,11 +2,11 @@ import style from '../styles/table.module.scss'
 import { useState } from 'react'
 import JsonBinioApi from '../components/JsonBinioApi'
 
-const Table = ({ query, addItem }) => {
+const Table = ({ query, addMod }) => {
 
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [error, setError] = useState(null);
-    const [items, setItems] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false)
+    const [error, setError] = useState(null)
+    const [mods, setMods] = useState([])
 
     const search = (data) => {
         return data.filter((jewel) => jewel.name.toLowerCase().includes(query) || jewel.description.toLowerCase().includes(query))
@@ -14,7 +14,7 @@ const Table = ({ query, addItem }) => {
 
     return (
         <>
-            <JsonBinioApi setError={setError} setIsLoaded={setIsLoaded} setItems={setItems} />
+            <JsonBinioApi setError={setError} setIsLoaded={setIsLoaded} setMods={setMods} />
 
             {error && <div><h1>Error during loading the data.</h1></div>}
             
@@ -31,8 +31,8 @@ const Table = ({ query, addItem }) => {
                     </thead>
                     
                     <tbody>
-                        {search(items).map((jewel) => (
-                            <tr key={jewel.name} onClick={() => addItem(jewel)}>
+                        {search(mods).map((jewel) => (
+                            <tr key={jewel.name} onClick={() => addMod(jewel)}>
                                 <td id="preSuff">{ jewel.prefsuff }</td>
                                 <td id="name">{ jewel.name }</td>
                                 <td id="fullDesc">{ jewel.description }</td>

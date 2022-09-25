@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function JsonBinioApi({setError, setIsLoaded, setItems}) {
+function JsonBinioApi({setError, setIsLoaded, setMods}) {
 
   const requestOptions = {
     headers : {
@@ -16,7 +16,7 @@ function JsonBinioApi({setError, setIsLoaded, setItems}) {
       .then(res => res.json())
       .then((result) => {
           setIsLoaded(true);
-          setItems(result.record);
+          setMods(result.record);
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -26,7 +26,7 @@ function JsonBinioApi({setError, setIsLoaded, setItems}) {
           setError(error);
         }
       )
-  }, [setError, setIsLoaded, setItems]);
+  }, [setError, setIsLoaded, setMods]);
 }
 
 export default JsonBinioApi

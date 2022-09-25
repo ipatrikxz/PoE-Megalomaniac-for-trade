@@ -3,21 +3,22 @@ import styles from '../styles/Home.module.scss'
 import Head from 'next/head'
 import Hero from '../components/Hero'
 import Table from '../components/Table'
-import Search from '../components/Search'
+import SearchOptions from '../components/SearchOptions'
+import Mods from '../components/Mods'
 import ScrollToTop from '../components/ScrollToTop'
 
 export default function Home() {
 
-  const [query, setQuery] = useState('')
+  const [searchInput, setSearchInput] = useState('')
   const [mods, setMod] = useState([])
 
-  const addItem = (mod) => {
+  const addMod = (mod) => {
     setMod(prevMods => {
       return !prevMods.includes(mod) ? [...prevMods, mod] : [...prevMods]
     })
   }
 
-  const removeItem = (mod) => {
+  const removeMod = (mod) => {
     setMod(current =>
       current.filter(currMod => {
         return currMod.name != mod.name
@@ -35,8 +36,12 @@ export default function Home() {
       <Hero />
       
       <main className={styles.main}>
-        <Search setQuery={setQuery} mods={mods} removeItem={removeItem} />
-        <Table query={query} addItem={addItem} />
+        <div className={styles.search}>
+            <Mods mods={mods} removeMod={removeMod} />
+            <SearchOptions mods={mods} setSearchInput={setSearchInput} />
+        </div>
+
+        <Table query={searchInput} addMod={addMod} />
       </main>
 
       <ScrollToTop />

@@ -1,0 +1,138 @@
+.searchBox {
+  width: 240px;
+  margin-bottom: .25rem;
+  align-self: flex-end;
+  text-align: center;
+  border-left: 1px solid var(--lighter-grey-color);
+  padding-left: .25rem;
+
+  .header{
+    padding: 0;
+    margin: 0;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  .searchType{
+    display: flex;
+    flex-direction: column;
+
+    .countGroup{
+      align-items: stretch;
+      list-style-type: none;
+      width: 100%;
+      padding: 0;
+      margin-top: .5rem;
+      margin-bottom: .25rem;
+
+      .count{
+        width: 100%;
+      }
+
+      .countInput{  
+        width: 100%;
+        padding: .5rem;
+        margin-top: .1rem;
+        color: var(--font-color);
+        background: var(--dark-green-color);
+        border: 1px solid var(--lighter-grey-color);
+        border-radius: .2rem;
+
+        &[type='number'] {
+          -moz-appearance: textfield;
+        }
+      
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        &::placeholder{
+          color: var(--transparent-font-color);
+        }
+      }
+    }
+
+    .count, 
+    .and{
+      text-align: center;
+      padding: .3rem .2rem;
+      border: 1px solid var(--transparent-font-color);
+      border-radius: .2em;
+      transition: color 0.15s ease, border-color 0.15s ease;
+      
+      &:hover,
+      &:focus,
+      &:active {
+        cursor: pointer;
+        color: var(--font-color);
+        background: var(--dark-green-color);
+        border-color: var(--lighter-green-color);
+      }
+    }
+
+    .and{
+      margin-top: .25rem;
+    }
+
+    .selected{
+      color: var(--font-color);
+      background: var(--dark-green-color);
+      border-color: var(--lighter-green-color);
+    }
+  }
+
+  .SearchOnTradeBtn{
+    margin-bottom: .25rem;
+    padding: .5rem;
+    text-align: left;
+    color: var(--dark-font-color);
+    background: var(--lighter-green-color);
+    border: 1px solid var(--tp-bg-color);
+    border-radius: .2em;
+    transition: color 0.15s ease, border-color 0.15s ease, transform .333s ease;
+    max-width: 300px;
+    font-size: 1.1rem;
+    padding-left: .3rem;
+    text-align: center;
+
+    a{
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+      color: var(--dark-font-color);
+      border-color: var(--dark-green-color);
+      transform: translateX(1.2px) translateY(-1px);
+    }
+  }
+
+  .searchInput {
+    color: var(--font-color);
+    background: var(--dark-green-color);
+    border: 1px solid var(--lighter-grey-color);
+    border-radius: .2em;
+    margin-top: .25rem;
+    padding: .5rem;
+    width: 100%;
+
+    &::placeholder{
+      color: var(--transparent-font-color);
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .searchBox{
+    width: 100%;
+    border: none;
+
+    .SearchOnTradeBtn{
+        margin: 0 auto;
+        width: 100%;
+    }
+  }
+}
