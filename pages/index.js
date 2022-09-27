@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import styles from '../styles/Home.module.scss'
 import Head from 'next/head'
 import Hero from '../components/Hero'
-import Table from '../components/Table'
+import MyMods from '../components/MyMods'
 import SearchOptions from '../components/SearchOptions'
-import Mods from '../components/Mods'
+import Table from '../components/Table'
 import ScrollToTop from '../components/ScrollToTop'
 
 export default function Home() {
@@ -19,25 +19,22 @@ export default function Home() {
   }
 
   const removeMod = (mod) => {
-    setMod(current =>
-      current.filter(currMod => {
+    setMod(current => current.filter(currMod => {
         return currMod.name != mod.name
-      }),
-    );
+      }));
   }
 
   return (
     <div className={styles.container}>
       <Head>
         <title>Megalomaniac Jewel Finder</title>
-        <meta name="description" content="Made for Path of Exile enjoyers, Who loves to lurk for Megalomaniac Jewels." />
       </Head>
 
       <Hero />
       
       <main className={styles.main}>
         <div className={styles.search}>
-            <Mods mods={mods} removeMod={removeMod} />
+            <MyMods mods={mods} removeMod={removeMod} />
             <SearchOptions mods={mods} setSearchInput={setSearchInput} />
         </div>
 

@@ -1,6 +1,8 @@
 import styles from '../styles/mods.module.scss'
 
-const Mods = ({mods, removeMod}) => {
+const MyMods = ({mods, removeMod}) => {
+
+  const { prefix, suffix, card } = styles
 
   const isPrefix = (mod) => {
     return mod.prefsuff === 'Prefix'
@@ -9,7 +11,7 @@ const Mods = ({mods, removeMod}) => {
   const makeList = () => {
     return mods.map((mod, i) => { 
         return ( 
-            <li key={i} className={`${styles.card} ${isPrefix(mod) ? styles.prefix : styles.suffix}`} onClick={() => removeMod(mod)}> {mod.name} </li> 
+            <li key={i} className={`${card} ${isPrefix(mod) ? prefix : suffix}`} onClick={() => removeMod(mod)}> {mod.name} </li> 
         ) 
     })           
   }
@@ -29,4 +31,4 @@ const Mods = ({mods, removeMod}) => {
   );
 };
 
-export default Mods;
+export default MyMods;
