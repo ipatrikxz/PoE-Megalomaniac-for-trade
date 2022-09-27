@@ -1,21 +1,17 @@
 import style from '../styles/table.module.scss'
-import { useState } from 'react'
-import JsonBinioApi from '../components/JsonBinioApi'
+import useMods from '../hooks/useMods'
 
 const Table = ({ query, addMod }) => {
-
-    const [isLoaded, setIsLoaded] = useState(false)
-    const [error, setError] = useState(null)
-    const [mods, setMods] = useState([])
+    
+    const myMods = useMods()
+    const { isLoaded, error, mods } = myMods
 
     const search = (data) => {
-        return data.filter((jewel) => jewel.name.toLowerCase().includes(query) || jewel.description.toLowerCase().includes(query))
+        return data.filter((item) => item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query))
     }
 
     return (
         <>
-            <JsonBinioApi setError={setError} setIsLoaded={setIsLoaded} setMods={setMods} />
-
             {error && <div><h1>Error during loading the data.</h1></div>}
             
             {!isLoaded && <div><h1>Loading...</h1></div>}

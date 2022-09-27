@@ -23,7 +23,7 @@ const SearchOptions = ({mods, setSearchInput}) => {
     return mods.map((mod) => { return { 'id': mod.id }})
   }
 
-  let source = {
+  let source = JSON.stringify({
     "query": {
         "filters": {
           "type_filters": { 
@@ -44,9 +44,9 @@ const SearchOptions = ({mods, setSearchInput}) => {
             "filters": generateListOfIDs(mods)
         }]
     }
-  }
+  })
 
-  let link = mods.length > 0 ? `https://www.pathofexile.com/trade/search/Sentinel?q=${JSON.stringify(source)}` : '#'
+  let link = mods.length > 0 ? `https://www.pathofexile.com/trade/search/Sentinel?q=${source}` : '#'
 
   return (
     <div className={styles.searchBox}>

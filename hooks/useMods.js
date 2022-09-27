@@ -1,6 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function JsonBinioApi({setError, setIsLoaded, setMods}) {
+export default function useMods() {
+
+  const [mods, setMods] = useState([])
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [error, setError] = useState(null)
 
   const requestOptions = {
     headers : {
@@ -8,9 +12,6 @@ function JsonBinioApi({setError, setIsLoaded, setMods}) {
     }
   }
 
-  // Note: the empty deps array [] means
-  // this useEffect will run once
-  // similar to componentDidMount()
   useEffect(() => {
     fetch("https://api.jsonbin.io/v3/b/632da911a1610e638635d3e7/latest", requestOptions)
       .then(res => res.json())
@@ -18,15 +19,12 @@ function JsonBinioApi({setError, setIsLoaded, setMods}) {
           setIsLoaded(true);
           setMods(result.record);
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         (error) => {
           setIsLoaded(true);
           setError(error);
         }
       )
-  }, [setError, setIsLoaded, setMods]);
-}
+  }, []);
 
-export default JsonBinioApi
+  return {mods, isLoaded, error};
+}
