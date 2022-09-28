@@ -1,9 +1,11 @@
+@use './abstracts/colors';
+
 .searchBox {
   width: 240px;
   margin-bottom: .25rem;
   align-self: flex-end;
   text-align: center;
-  border-left: 1px solid var(--lighter-grey-color);
+  border-left: 1px solid colors.$lighter-grey;
   padding-left: .25rem;
 
   .header{
@@ -33,9 +35,9 @@
         width: 100%;
         padding: .5rem;
         margin-top: .1rem;
-        color: var(--font-color);
-        background: var(--dark-green-color);
-        border: 1px solid var(--lighter-grey-color);
+        color: colors.$font;
+        background: colors.$dark-green;
+        border: 1px solid colors.$lighter-grey;
         border-radius: .2rem;
 
         &[type='number'] {
@@ -48,7 +50,7 @@
         }
 
         &::placeholder{
-          color: var(--transparent-font-color);
+          color: colors.$transparent-font;
         }
       }
     }
@@ -57,7 +59,7 @@
     .and{
       text-align: center;
       padding: .3rem .2rem;
-      border: 1px solid var(--transparent-font-color);
+      border: 1px solid colors.$transparent-font;
       border-radius: .2em;
       transition: color 0.15s ease, border-color 0.15s ease;
       
@@ -65,9 +67,9 @@
       &:focus,
       &:active {
         cursor: pointer;
-        color: var(--font-color);
-        background: var(--dark-green-color);
-        border-color: var(--lighter-green-color);
+        color: colors.$font;
+        background: colors.$dark-green;
+        border-color: colors.$lighter-green;
       }
     }
 
@@ -76,9 +78,9 @@
     }
 
     .selected{
-      color: var(--font-color);
-      background: var(--dark-green-color);
-      border-color: var(--lighter-green-color);
+      color: colors.$font;
+      background: colors.$dark-green;
+      border-color: colors.$lighter-green;
     }
   }
 
@@ -86,9 +88,9 @@
     margin-bottom: .25rem;
     padding: .5rem;
     text-align: left;
-    color: var(--dark-font-color);
-    background: var(--lighter-green-color);
-    border: 1px solid var(--tp-bg-color);
+    color: colors.$dark-font;
+    background: colors.$lighter-green;
+    border: 1px solid colors.$tp-bg;
     border-radius: .2em;
     transition: color 0.15s ease, border-color 0.15s ease, transform .333s ease;
     max-width: 300px;
@@ -104,8 +106,8 @@
     &:focus,
     &:active {
       cursor: pointer;
-      color: var(--dark-font-color);
-      border-color: var(--dark-green-color);
+      color: colors.$dark-font;
+      border-color: colors.$dark-green;
       transform: translateX(1.2px) translateY(-1px);
     }
   }
@@ -120,7 +122,7 @@
     width: 100%;
 
     &::placeholder{
-      color: var(--transparent-font-color);
+      color: colors.$transparent-font;
     }
   }
 }

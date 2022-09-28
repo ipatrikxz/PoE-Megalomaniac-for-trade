@@ -1,3 +1,5 @@
+@use './abstracts/colors';
+
 .mods{
   width: 100%;
 
@@ -19,11 +21,11 @@
     margin-bottom: .25rem;
 
     .prefix{
-      background-color: var(--prefix-color);
+      background-color: colors.$prefix;
     }
 
     .suffix{
-      background-color: var(--suffix-color);
+      background-color: colors.$suffix;
     }
     
     .card {
@@ -31,7 +33,7 @@
       margin-right: .25rem;
       padding: .3rem .2rem;
       text-align: left;
-      color: var(--light-font-color);
+      color: colors.$lighter-font;
       text-decoration: none;
       border: 1px solid #eaeaea4b;
       border-radius: 2px;
@@ -42,8 +44,8 @@
       &:active {
         cursor: pointer;
         background: #660a0333;
-        color: var(--font-color);
-        border-color: var(--danger-color);
+        color: colors.$font;
+        border-color: colors.$danger;
         transform: translateX(1.2px) translateY(-1px);
       }
 

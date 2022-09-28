@@ -1,4 +1,4 @@
-
+@use './abstracts/colors';
 
 .title {
   margin: 0;
@@ -8,7 +8,7 @@
   text-align: center;
 
   a:hover{
-    color: var(--lighter-font-color);
+    color: colors.$lighter-font;
   }
 
 }

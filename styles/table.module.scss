@@ -1,3 +1,5 @@
+@use './abstracts/colors';
+
 .table {
     
     border-radius: .1em;
@@ -5,7 +7,7 @@
 
     thead tr th {
         color: #000;
-        background: var(--grey-color);
+        background: colors.$grey;
         font-size: 1.1rem;
         padding: 1rem;
     }
@@ -13,18 +15,18 @@
     tbody {
         tr {
             &:nth-child(even) {
-                background: var(--tp-bg);
+                background: colors.$tp-bg;
             }
 
             td {
-                border: 1px solid var(--grey-color);
+                border: 1px solid colors.$grey;
                 padding: 1rem .5rem;
             }
 
             &:hover {
                 cursor: pointer;
-                background: var(--lighter-bg-color);
-                color: var(--font-color);
+                background: colors.$lighter-bg;
+                color: colors.$font;
             }
         }
     }

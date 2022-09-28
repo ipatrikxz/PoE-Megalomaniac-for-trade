@@ -1,7 +1,8 @@
+@use './abstracts/colors';
 
 .container {
-  background: var(--bg-color);
-  color: var(--font-color);
+  background: colors.$bg;
+  color: colors.$font;
 }
 
 .main{
