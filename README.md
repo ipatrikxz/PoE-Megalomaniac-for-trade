@@ -39,11 +39,11 @@ The purpose of this project is to summarize all the Noteable jewel mod names and
   - Generate search query for the offical PoE trade site based on your list and search type
 
 ## Screenshots
-  <div>
-    <img src="./public/screenExample0.png">
-    <img src="./public/screenExample1.png">
-    <img src="./public/screenExample3.png">
-    <img src="./public/screenExample2.png">
+  <div align="center">
+    <img width="100%" src="./public/screenExample0.png">
+    <img width="100%" src="./public/screenExample1.png">
+    <img width="100%" src="./public/screenExample3.png">
+    <img width="100%" src="./public/screenExample2.png">
   </div>
 
 ## Built With
