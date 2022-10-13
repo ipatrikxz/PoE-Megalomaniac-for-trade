@@ -8,7 +8,7 @@ export default function useMods() {
 
   const requestOptions = {
     headers : {
-      "X-ACCESS-KEY" : '$2b$10$eJhLhwdtmkyX5qDRleY8NOBDCfDSvxaTVguethbH6.xyg0O4wmKw6'
+      "X-ACCESS-KEY" : process.env.X_ACCESS_KEY
     }
   }
 
@@ -16,12 +16,15 @@ export default function useMods() {
     fetch("https://api.jsonbin.io/v3/b/632da911a1610e638635d3e7/latest", requestOptions)
       .then(res => res.json())
       .then((result) => {
-          setIsLoaded(true);
-          setMods(result.record);
+          if(result.record){
+            setIsLoaded(true)
+            setMods(result.record)
+          }
+          setError(result.message)
         },
         (error) => {
-          setIsLoaded(true);
-          setError(error);
+          setIsLoaded(true)
+          setError(error)
         }
       )
   }, []);

@@ -55,18 +55,21 @@ const SearchOptions = ({mods, setSearchInput}) => {
       <div className={styles.searchType}>
         <ul className={styles.countGroup}>
 
+          {/* Count Search Option */}
           <li type='count' className={`${styles.count} ${isCountSelected && styles.selected}`} onClick={(e) => handleSelection(e)}>COUNT</li>
 
-          {
-            isCountSelected &&
+          {/* if count selected show Count input */}
+          { isCountSelected &&
               <li><input className={styles.countInput} type="number" placeholder="min count: 1, 2, 3" onChange={e => setCount(e.target.value)} /></li>
           }
         
+          {/* AND Search Option */}
           <li type='and' className={`${styles.and} ${!isCountSelected && styles.selected}`} onClick={(e) => handleSelection(e)}>AND</li>
 
         </ul>
       </div>
 
+      {/* Search button */}
       <div className={styles.SearchOnTradeBtn}>
           <a href={link} target="_blank" rel="noreferrer">Search on trade {'-->'}</a> 
       </div>
