@@ -16,7 +16,7 @@ const Table = ({ query, addMod }) => {
             
             {!isLoaded && <div><h1>Loading...</h1></div>}
 
-            {isLoaded  && 
+            {isLoaded && !error && 
                 <table className={style.table}>
                     <thead>
                         <tr>

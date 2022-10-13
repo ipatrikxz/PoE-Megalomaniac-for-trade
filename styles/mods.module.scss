@@ -8,6 +8,11 @@
     margin: 0;
     font-size: 1.1rem;
     text-align: left;
+    text-shadow: colors.$text-shadow;
+  }
+
+  .emptyMods{
+    text-shadow: colors.$text-shadow;
   }
   
   .cards{
@@ -17,6 +22,7 @@
     justify-items: stretch;
     list-style-type: none;
     padding: 0;
+    padding-right: .25rem;
     margin-top: .25rem;
     margin-bottom: .25rem;
 
@@ -37,6 +43,8 @@
       text-decoration: none;
       border: 1px solid #eaeaea4b;
       border-radius: 2px;
+      -webkit-box-shadow: colors.$box-shadow;
+      box-shadow: colors.$box-shadow;
       transition: color .33ms ease, border-color .33msease, transform .33ms ease, background .33ms ease;
 
       &:hover,

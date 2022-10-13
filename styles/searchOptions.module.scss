@@ -2,17 +2,18 @@
 
 .searchBox {
   width: 240px;
-  margin-bottom: .25rem;
+  margin-bottom: .8rem;
   align-self: flex-end;
   text-align: center;
   border-left: 1px solid colors.$lighter-grey;
-  padding-left: .25rem;
+  padding-left: .5rem;
 
   .header{
     padding: 0;
     margin: 0;
     font-size: 1.1rem;
     text-align: left;
+    text-shadow: colors.$text-shadow;
   }
 
   .searchType{
@@ -31,10 +32,14 @@
         width: 100%;
       }
 
+      .and{
+        margin: .25rem 0;
+      }  
+
       .countInput{  
         width: 100%;
         padding: .5rem;
-        margin-top: .1rem;
+        margin-top: .2rem;
         color: colors.$font;
         background: colors.$dark-green;
         border: 1px solid colors.$lighter-grey;
@@ -73,10 +78,6 @@
       }
     }
 
-    .and{
-      margin-top: .25rem;
-    }
-
     .selected{
       color: colors.$font;
       background: colors.$dark-green;
@@ -84,19 +85,19 @@
     }
   }
 
-  .SearchOnTradeBtn{
-    margin-bottom: .25rem;
+  .searchOnTradeBtn{
+    text-align: center;
+    max-width: 300px;
     padding: .5rem;
-    text-align: left;
-    color: colors.$dark-font;
-    background: colors.$lighter-green;
+    padding-left: .3rem;
+    margin-bottom: .25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     border: 1px solid colors.$tp-bg;
     border-radius: .2em;
+    color: colors.$dark-font;
+    background: colors.$lighter-green;
     transition: color 0.15s ease, border-color 0.15s ease, transform .333s ease;
-    max-width: 300px;
-    font-size: 1.1rem;
-    padding-left: .3rem;
-    text-align: center;
 
     a{
       text-decoration: none;
@@ -115,7 +116,7 @@
   .searchInput {
     color: colors.$font;
     background: colors.$lighter-bg;
-    border: 1px solid colors.$lighter-grey;
+    border: 2px solid colors.$lighter-grey;
     border-radius: .2em;
     margin-top: .25rem;
     padding: .5rem;
@@ -125,16 +126,33 @@
       color: colors.$transparent-font;
     }
   }
+
+  .count,
+  .countInput,
+  .and,
+  .searchOnTradeBtn,
+  .searchInput {
+    -webkit-box-shadow: colors.$box-shadow; 
+    box-shadow: colors.$box-shadow;
+  }
 }
 
 @media (max-width: 450px) {
+  
   .searchBox{
+    margin-top: 1rem;
     width: 100%;
     border: none;
+    padding: 0;
 
-    .SearchOnTradeBtn{
-        margin: 0 auto;
-        width: 100%;
+    .searchOnTradeBtn{ 
+        min-width: 100%;
+        margin-bottom: .5rem;
+    }
+
+    .searchInput{
+      margin: 0;
+      height: 50px;
     }
   }
 }
