@@ -7,16 +7,16 @@ const Table = ({ query, addMod }) => {
     const { isLoaded, error, mods } = myMods
 
     const search = (data) => {
-        return data.filter((item) => item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query))
+        return data.filter((item) => item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)) 
     }
 
     return (
         <>
-            {error && <div><h1>Error during loading the data.</h1></div>}
+            {error && <div><h1>Error during loading the mods.</h1></div>}
             
             {!isLoaded && <div><h1>Loading...</h1></div>}
 
-            {isLoaded && 
+            {isLoaded  && 
                 <table className={style.table}>
                     <thead>
                         <tr>
