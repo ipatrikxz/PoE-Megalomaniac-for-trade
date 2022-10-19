@@ -60,7 +60,7 @@ const SearchOptions = ({mods, setSearchInput}) => {
 
           {/* if count selected show Count input */}
           { isCountSelected &&
-              <li><input className={styles.countInput} type="number" placeholder="min count: 1, 2, 3" onChange={e => setCount(e.target.value)} /></li>
+            <input className={styles.countInput} type="number" placeholder="min count: 1, 2, 3" onChange={e => setCount(e.target.value)} />
           }
         
           {/* AND Search Option */}
@@ -70,8 +70,8 @@ const SearchOptions = ({mods, setSearchInput}) => {
       </div>
 
       {/* Search button */}
-      <div className={styles.SearchOnTradeBtn}>
-          <a href={link} target="_blank" rel="noreferrer">Search on trade {'-->'}</a> 
+      <div className={styles.searchOnTradeBtn}>
+          <a href={link} target="_blank" rel="noreferrer">Search..</a> 
       </div>
       
       <input className={styles.searchInput} type="text" placeholder="Search.." onChange={e => setSearchInput(e.target.value.toLocaleLowerCase())} />

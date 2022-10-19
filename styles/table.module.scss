@@ -1,15 +1,17 @@
 @use './abstracts/colors';
 
 .table {
-    
     border-radius: .1em;
     min-width: 100%;
+    -webkit-box-shadow: colors.$box-shadow;
+    box-shadow: colors.$box-shadow;
 
     thead tr th {
         color: #000;
         background: colors.$grey;
         font-size: 1.1rem;
         padding: 1rem;
+        text-shadow: colors.$text-shadow;
     }
 
     tbody {

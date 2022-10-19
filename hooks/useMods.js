@@ -8,7 +8,7 @@ export default function useMods() {
 
   const requestOptions = {
     headers : {
-      "X-ACCESS-KEY" : process.env.X_ACCESS_KEY
+      "X-ACCESS-KEY" : process.env.X_ACCES_KEY
     }
   }
 
@@ -20,6 +20,7 @@ export default function useMods() {
             setIsLoaded(true)
             setMods(result.record)
           }
+          setIsLoaded(true)
           setError(result.message)
         },
         (error) => {

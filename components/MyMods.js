@@ -13,7 +13,7 @@ const MyMods = ({mods, removeMod}) => {
       <p className={styles.header}>Mod List:</p>
  
         { mods.length === 0 &&
-          <p>Select a mod to add to the list.</p>
+          <p className={styles.emptyMods}>Select a mod to add to the list.</p>
         }
 
         { mods.length != 0 &&
