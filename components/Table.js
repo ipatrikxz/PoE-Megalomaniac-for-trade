@@ -1,5 +1,6 @@
 import style from '../styles/table.module.scss'
 import useMods from '../hooks/useMods'
+import Spinner from '../components/Spinner'
 
 const Table = ({ query, addMod }) => {
     
@@ -14,7 +15,7 @@ const Table = ({ query, addMod }) => {
         <>
             {error && <div><h1>Error during loading the mods.</h1></div>}
             
-            {!isLoaded && <div><h1>Loading...</h1></div>}
+            {!isLoaded && <Spinner />}
 
             {isLoaded && !error && 
                 <table className={style.table}>

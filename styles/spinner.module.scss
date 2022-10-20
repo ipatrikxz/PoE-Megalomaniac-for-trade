@@ -1,0 +1,13 @@
+.spinner:before {
+  content:"Loading...";
+}
+
+.spinner {
+  margin-top: 2rem;
+  font-weight: bold;
+  font-size: 3rem;
+  padding-bottom: 8px;
+  background:linear-gradient(currentColor 0 0) bottom left/0% 5px no-repeat;
+  animation: c2 2s linear infinite;
+}
+@keyframes c2 {to {background-size: 100% 5px}}

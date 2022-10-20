@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
-    X_ACCES_KEY: '$2b$10$eJhLhwdtmkyX5qDRleY8NOBDCfDSvxaTVguethbH6.xyg0O4wmKw6',
+    X_ACCESS_KEY: '$2b$10$eJhLhwdtmkyX5qDRleY8NOBDCfDSvxaTVguethbH6.xyg0O4wmKw6',
   }
 }
 
