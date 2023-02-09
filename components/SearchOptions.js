@@ -1,4 +1,5 @@
-import styles from '../styles/searchOptions.module.scss'
+
+import styles from '../styles/searchOptions.module.scss';
 import { useState } from 'react';
 
 const SearchOptions = ({mods, setSearchInput}) => {
