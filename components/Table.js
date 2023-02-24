@@ -8,7 +8,10 @@ const Table = ({ query, addMod }) => {
     const { isLoaded, error, mods } = myMods
 
     const search = (data) => {
-        return data.filter((item) => item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)) 
+        if(query.length > 3){
+            return data.filter((item) => item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query)) 
+        }
+        return mods
     }
 
     return (
@@ -18,25 +21,33 @@ const Table = ({ query, addMod }) => {
             {!isLoaded && <Spinner />}
 
             {isLoaded && !error && 
-                <table className={style.table}>
-                    <thead>
-                        <tr>
-                            <th>Type</th>
-                            <th>Name</th>
-                            <th>Full Descriptions</th>
-                        </tr>
-                    </thead>
-                    
-                    <tbody>
-                        {search(mods).map((jewel) => (
-                            <tr key={jewel.name} onClick={() => addMod(jewel)}>
-                                <td id="preSuff">{ jewel.prefsuff }</td>
-                                <td id="name">{ jewel.name }</td>
-                                <td id="fullDesc">{ jewel.description }</td>
+                <>
+                {query.length > 3 &&  
+                    <div className={style.searchResultCounter}>
+                        <p>Found {search(mods).length} mods that contains {query}.</p>
+                    </div>
+                }
+
+                    <table className={style.table}>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Name</th>
+                                <th>Full Descriptions</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        
+                        <tbody>
+                            {search(mods).map((jewel) => (
+                                <tr key={jewel.name} onClick={() => addMod(jewel)}>
+                                    <td id="preSuff">{ jewel.prefsuff }</td>
+                                    <td id="name">{ jewel.name }</td>
+                                    <td id="fullDesc">{ jewel.description }</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </>
             }
         </>
     );
