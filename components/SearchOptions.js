@@ -71,11 +71,11 @@ const SearchOptions = ({mods, setSearchInput}) => {
       </div>
 
       {/* Search button */}
-      <div className={styles.searchOnTradeBtn}>
-          <a href={link} target="_blank" rel="noreferrer">Search..</a> 
-      </div>
+      <a href={link} target="_blank" rel="noreferrer">
+        <button className={styles.searchOnTradeBtn}>Search on trade</button>
+      </a>
       
-      <input className={styles.searchInput} type="text" placeholder="Search.." onChange={e => setSearchInput(e.target.value.toLocaleLowerCase())} />
+      <input className={styles.searchInput} type="text" placeholder="Search in table.." onChange={e => setSearchInput(e.target.value.toLocaleLowerCase())} />
       
     </div>
   );

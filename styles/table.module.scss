@@ -1,5 +1,13 @@
 @use './abstracts/colors';
 
+.searchResultCounter{
+    width: 100%;
+
+    p{
+        text-align: right;
+    }
+}
+
 .table {
     border-radius: .1em;
     min-width: 100%;

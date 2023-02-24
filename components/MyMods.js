@@ -10,10 +10,10 @@ const MyMods = ({mods, removeMod}) => {
 
   return (
     <div className={styles.mods}>
-      <p className={styles.header}>Mod List:</p>
+      <p className={styles.header}>Selected mods:</p>
  
         { mods.length === 0 &&
-          <p className={styles.emptyMods}>Select a mod to add to the list.</p>
+          <p className={styles.emptyMods}>Click on a mod to add to the list.</p>
         }
 
         { mods.length != 0 &&
