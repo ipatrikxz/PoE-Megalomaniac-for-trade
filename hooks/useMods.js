@@ -6,7 +6,7 @@ export default function useMods() {
   const [isLoaded, setIsLoaded] = useState(false);
   const ducumentLink =
     "https://api.jsonbin.io/v3/b/632da911a1610e638635d3e7/latest";
-  const X_ACCESS_KEY = process.env.NEXT_PUBLIC_JsonBinApiKey;
+  const X_ACCESS_KEY = process.env.JsonBinApiKey;
 
   const requestOptions = {
     headers: {
