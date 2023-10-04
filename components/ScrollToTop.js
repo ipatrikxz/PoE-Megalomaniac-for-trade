@@ -1,32 +1,36 @@
-import { useState, useEffect } from 'react';
-import { FaAngleUp } from 'react-icons/fa';
-import styles from '../styles/scrollToTop.module.scss';
+import { useState, useEffect } from "react";
+import { FaAngleUp } from "react-icons/fa";
+import styles from "../styles/scrollToTop.module.scss";
 
 const ScrollToTop = () => {
-
-  const [showTopBtn, setShowTopBtn] = useState(false)
+  const [isShowTopBtn, setIsShowTopBtn] = useState(false);
+  const windowOffsetYValue = 400;
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-            setShowTopBtn(true)
-        } else {
-            setShowTopBtn(false)
-        }
-    });
-  }, []);
-  
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  const handleScroll = () => {
+    window.scrollY > windowOffsetYValue
+      ? setIsShowTopBtn(!isShowTopBtn)
+      : setIsShowTopBtn(isShowTopBtn);
+  };
+
   const goToTop = () => {
     window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
+      top: 0,
+      behavior: "smooth",
     });
   };
 
   return (
-      <div className={styles.topBtn}>
-        { showTopBtn && <FaAngleUp className={styles.icon} onClick={goToTop} /> }
-      </div>
+    <div className={styles.topBtn}>
+      {isShowTopBtn && <FaAngleUp className={styles.icon} onClick={goToTop} />}
+    </div>
   );
 };
 
