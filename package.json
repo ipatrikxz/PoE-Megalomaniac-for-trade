@@ -15,5 +15,8 @@
     "react-icons": "^4.4.0",
     "react-widgets": "^5.8.4",
     "sass": "^1.53.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0"
   }
 }

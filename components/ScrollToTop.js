@@ -8,16 +8,12 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   });
 
   const handleScroll = () => {
-    window.scrollY > windowOffsetYValue
-      ? setIsShowTopBtn(!isShowTopBtn)
-      : setIsShowTopBtn(isShowTopBtn);
+    window.scrollY >= windowOffsetYValue
+      ? setIsShowTopBtn(true)
+      : setIsShowTopBtn(false);
   };
 
   const goToTop = () => {
