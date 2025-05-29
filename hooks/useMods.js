@@ -4,20 +4,15 @@ export default function useMods() {
   const [mods, setMods] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const ducumentLink = process.env.NEXT_PUBLIC_JsonDocumentLink;
-  const X_ACCESS_KEY = process.env.NEXT_PUBLIC_JsonBinApiKey;
-
-  const requestOptions = {
-    headers: {
-      "X-ACCESS-KEY": X_ACCESS_KEY,
-    },
-  };
 
   useEffect(() => {
-    fetch(ducumentLink, requestOptions)
-      .then((res) => res.json())
-      .then((result) => {
-        result.record ? setMods(result.record) : setError(result.message);
+    fetch("/api/jsonbin")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch from API route");
+        return res.json();
+      })
+      .then((data) => {
+        setMods(data.record || []);
         setIsLoaded(true);
       })
       .catch((error) => {
