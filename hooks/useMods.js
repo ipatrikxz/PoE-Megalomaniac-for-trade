@@ -8,11 +8,13 @@ export default function useMods() {
   useEffect(() => {
     fetch("/api/jsonbin")
       .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch from API route");
+        if (!res.ok) throw new Error(`API error: ${res.status}`);
         return res.json();
       })
       .then((data) => {
-        setMods(data.record || []);
+        console.log("API response:", data.record);
+
+        setMods(data.record);
         setIsLoaded(true);
       })
       .catch((error) => {
