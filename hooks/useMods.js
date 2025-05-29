@@ -12,9 +12,9 @@ export default function useMods() {
         return res.json();
       })
       .then((data) => {
-        console.log("API response:", data.record);
+        console.log("API response:", data);
 
-        setMods(data.record);
+        setMods(data.record || []);
         setIsLoaded(true);
       })
       .catch((error) => {
