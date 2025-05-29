@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const documentLink = process.env.JsonDocumentLink; // Fixed typo
+  const documentLink = process.env.JsonDocumentLink;
   const apiKey = process.env.JsonBinApiKey;
 
   try {
