@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <img src="./public/UniqueJewelBase2.png">
-  <h2 align="center">Megalomaniac Notable Finder</h2>
+  <h2 align="center">Megalomaniac Notable Mod Finder (Legacy)</h2>
 
   <!-- CALL TO ACTION -->
   <p align="center">

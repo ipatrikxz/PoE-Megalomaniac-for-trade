@@ -4,8 +4,7 @@ export default function useMods() {
   const [mods, setMods] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const ducumentLink =
-    "https://api.jsonbin.io/v3/b/632da911a1610e638635d3e7/latest";
+  const ducumentLink = process.env.NEXT_PUBLIC_JsonDocumentLink;
   const X_ACCESS_KEY = process.env.NEXT_PUBLIC_JsonBinApiKey;
 
   const requestOptions = {
@@ -19,6 +18,10 @@ export default function useMods() {
       .then((res) => res.json())
       .then((result) => {
         result.record ? setMods(result.record) : setError(result.message);
+        setIsLoaded(true);
+      })
+      .catch((error) => {
+        setError(error.message || "Something went wrong!");
         setIsLoaded(true);
       });
   }, []);
