@@ -21,7 +21,7 @@ const Table = ({ query, addMod }) => {
     <>
       {error && (
         <div>
-          <h1>Error during loading the mods.</h1>
+          <h1>{error}</h1>
         </div>
       )}
 
